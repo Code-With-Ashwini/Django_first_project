@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+    {% block content %}
+
+    <h1>User Form</h1>
+    <form method="post" action="{% url "submitform" %}">
+        {% csrf_token %}
+        {{form}}
+        {% comment %} <label for="val1">Value 1</label>
+        <input type="text" name="num1" id="val1" value={{n1}}><br>
+        <label for="val2">Value 2</label>
+        <input type="text" name="num2" id="val2" value={{n2}}><br> {% endcomment %}
+        <input type="submit" text="save">
+        <input type="text" value="{{output}}">
+    </form>
+    {% endblock %}

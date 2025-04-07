@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+   
+        <h1>Welcome  to Ducat</h1>
+        <h2>{{bdata}}</h2>
+        {% for n in clist%}
+            <div>{{forloop.counter}} {{n}}</div>
+        {% endfor %}
+
+        <br>
+        <table border="1" class="myTable">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    contact
+                </th>
+            </tr>
+            {% for d in student_details %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.phone}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+
+        <a href="/about-us">About Us</a>
+        <a href="{% url "contact" %}">Contact Us</a>
+
+{% endblock %}
